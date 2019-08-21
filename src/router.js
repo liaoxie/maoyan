@@ -23,6 +23,16 @@ const routes = [{
   {
     path: '/mycenter',
     component: () => import('./views/MyCenter/index.vue')
+  },
+  {
+    path:'/regist',
+    name:'regist',
+    component:()=>import('./views/MyCenter/regist.vue')
+  },
+  {
+    path:'/my',
+    name:'my',
+    component:()=>import('./views/MyCenter/my.vue')
   }
 ]
 
