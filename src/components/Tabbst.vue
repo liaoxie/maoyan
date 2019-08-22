@@ -9,14 +9,13 @@
   </ul>
 </template>
 
-
 <script>
 export default {
-  name: "Tabbst",
+  name: 'Tabbst',
   props: {
     tabs: Array
   }
-};
+}
 </script>
 
 <style lang='scss'>

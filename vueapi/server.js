@@ -8,27 +8,27 @@ const jwt=require('jsonwebtoken')
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 //注册功能
-app.post('/api/wodetian', (req, res) => {
-    //1.接受到用户名与密码username\password
-    let username = req.body.username;
-    let password = req.body.password;
-    password = bcry.hashSync(password, 10)
-    const user = new UserModel({
-        username,
-        password
-    })
-    user.save().then(() => {
-        res.send({
-            code: 0,
-            msg: 'ok'
-        })
-    }).catch(() => {
-        res.send({
-            code: -1,
-            msg: '不成功'
-        })
-    })
-})
+// app.post('/api/wodetian', (req, res) => {
+//     //1.接受到用户名与密码username\password
+//     let username = req.body.username;
+//     let password = req.body.password;
+//     password = bcry.hashSync(password, 10)
+//     const user = new UserModel({
+//         username,
+//         password
+//     })
+//     user.save().then(() => {
+//         res.send({
+//             code: 0,
+//             msg: 'ok'
+//         })
+//     }).catch(() => {
+//         res.send({
+//             code: -1,
+//             msg: '不ok'
+//         })
+//     })
+// })
 //登录功能
 app.post('/api/nidetian',async (req, res) => {
     let username = req.body.username
@@ -103,4 +103,37 @@ app.post('/api/money',async(req,res)=>{
          }
      })
 })
+//注册
+app.post('/api/wodetian',async(req,res)=>{
+    let username = req.body.username;
+    let password = req.body.password;
+    password = bcry.hashSync(password, 10)
+    UserModel.find({username}).then(data=>{
+        if(data.length>0){
+            res.send({
+                code:1,
+                msg:'用户名已被注册'
+            })
+        }else{
+            let user=new UserModel({
+                username:username,
+                password:password 
+            })
+            user.save().then(()=>{
+                res.send({
+                    code:0,
+                    msg:'注册成功'
+                })
+            })
+        }
+    }).catch(error=>{
+        res.send({
+            code:-1,
+            msg:'注册失败'
+        })
+    })
+})
+
+
+
 app.listen(9090);
