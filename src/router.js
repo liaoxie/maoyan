@@ -5,13 +5,6 @@ import store from './store'
 Vue.use(VueRouter)
 
 const routes = [{
-<<<<<<< HEAD
-  path: '/',
-  component: () => import('./views/index.vue'),
-  children: [{
-    path: 'movie',
-    component: () => import('./views/Movie/index.vue')
-=======
     path: '/',
     component: () => import('./views/index.vue'),
     children: [{
@@ -25,62 +18,45 @@ const routes = [{
             path: '2',
             component: () => import('./views/Movie/MovieZen.vue'),
           },
-
         ]
       },
       {
         path: 'cinema',
         component: () => import('./views/Cinema/index.vue')
+      },
+      {
+        path: '/my',
+        name: 'my',
+        component: () => import('./views/MyCenter/my.vue'),
+        meta: {
+          needlogin: true
+        }
       }
+
     ]
->>>>>>> feature/hebing
   },
   {
-    path: 'cinema',
-    component: () => import('./views/Cinema/index.vue')
+    path: '/city-list',
+    component: () => import('./views/City-list/index.vue')
   },
   {
-<<<<<<< HEAD
-    path: '/my',
-    name: 'my',
-    component: () => import('./views/MyCenter/my.vue'),
-    meta: {
-      needlogin: true
-    }
-=======
     path: '/mycenter',
     component: () => import('./views/MyCenter/index.vue')
   },
+
   {
-    path: '/particulars/:id',
-    component: () => import('./views/Movie/Particulars.vue')
->>>>>>> feature/hebing
+    path: '/regist',
+    name: 'regist',
+    component: () => import('./views/MyCenter/regist.vue')
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: () => import('./views/MyCenter/cart.vue'),
+    meta: {
+      needlogin: true
+    }
   }
-
-  ]
-},
-{
-  path: '/city-list',
-  component: () => import('./views/City-list/index.vue')
-},
-{
-  path: '/mycenter',
-  component: () => import('./views/MyCenter/index.vue')
-},
-
-{
-  path: '/regist',
-  name: 'regist',
-  component: () => import('./views/MyCenter/regist.vue')
-},
-{
-  path: '/cart',
-  name: 'cart',
-  component: () => import('./views/MyCenter/cart.vue'),
-  meta: {
-    needlogin: true
-  }
-}
 ]
 
 const router = new VueRouter({
@@ -94,8 +70,8 @@ router.beforeEach((to, from, next) => {
     } else {
       next({
         path: '/mycenter',
-        query:{
-          redirect:to.fullPath
+        query: {
+          redirect: to.fullPath
         }
       })
     }

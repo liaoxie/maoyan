@@ -88,6 +88,7 @@ export default {
           token: 'Atp3U3pbVKaS2pddO9JjFEXnGX0AAAAA5AgAAPevCZfXDKaX4mHXNE_rkiy4lmRzUiXJ7KBqbb9M483iQlF80645a56YqN6vd6zZqQ'
         }
       }).then(res => {
+        console.log(111);
         state.topfimList = res.coming
       })
     }

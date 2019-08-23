@@ -28,9 +28,6 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-export default {}
-=======
 export default {
   name: "Movie",
   data() {
@@ -66,7 +63,6 @@ export default {
     window.removeEventListener("scroll", this.Scroll);
   }
 };
->>>>>>> feature/hebing
 </script>
 
 
