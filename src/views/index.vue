@@ -6,38 +6,38 @@
 </template>
 
 <script>
-import Tabbast from "../components/Tabbst.vue";
+import Tabbast from '../components/Tabbst.vue'
 export default {
-  name: "index",
+  name: 'index',
 
   components: {
     Tabbast
   },
-  data() {
+  data () {
     return {
       tabs: [
         {
           id: 1,
-          name: "电影",
-          icon: "icondianying",
-          href: "/movie"
+          name: '电影',
+          icon: 'icondianying',
+          href: '/movie'
         },
         {
           id: 2,
-          name: "影院",
-          icon: "iconyingyuana",
-          href: "/cinema"
+          name: '影院',
+          icon: 'iconyingyuana',
+          href: '/cinema'
         },
         {
           id: 3,
-          name: "我的",
-          icon: "iconwode",
-          href: "/mycenter"
+          name: '我的',
+          icon: 'iconwode',
+          href: '/my'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -50,4 +50,3 @@ export default {
   }
 }
 </style>
-
