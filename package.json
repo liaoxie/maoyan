@@ -10,7 +10,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "vant": "^2.1.4",
     "vue": "^2.6.10",
     "vue-resource": "^1.5.1",
